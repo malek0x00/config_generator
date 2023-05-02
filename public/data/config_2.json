@@ -1,0 +1,14 @@
+{
+    "name":"shell",
+    "input":[
+        {"name":"folder","type":"text"},
+        {"name":"type","type":"selection","values":[
+            {"name":"maven","real_value":"mvn clean \nmvn package"},
+            {"name":"gradle","real_value":"gradlew clean \ngradlew build"}
+            ]
+        },
+        {"name":"admin","type":"text"},{"name":"password","type":"text"},
+        {"name":"pipeline","type":"text"}
+    ],
+    "config_path":"script.sh"
+}

@@ -1,0 +1,50 @@
+FROM gocd/gocd-agent-ubuntu-18.04:#####
+
+ARG java_v = #####
+
+RUN apt-get update && \
+    apt-get install -y openjdk-${java_v}-jdk curl tar bash procps && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Downloading and installing Maven
+# 1- Define a constant with the version of maven you want to install
+ARG #####=#####
+
+# 2- Define a constant with the working directory
+ARG USER_HOME_DIR="/root"
+
+# 4- Define the URL where maven can be downloaded from
+ARG BASE_URL=#####
+
+#####
+
+ENV JAVA_HOME /usr/lib/jvm/java-${java_v}-openjdk-amd64
+
+ENV PATH="$JAVA_HOME/bin:${PATH}"
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common \
+    && rm -rf /var/lib/apt/lists/*
+
+# Add Docker's official GPG key
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+# Add Docker repository to APT sources
+RUN add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+# Install Docker
+RUN apt-get update && apt-get install -y docker-ce docker-ce-cli containerd.io \
+    && rm -rf /var/lib/apt/lists/*
+# Create a user and group for running the container
+RUN usermod -aG docker go
+
+RUN service docker start
+RUN apt-get update && apt-get install -y \
+    wget
