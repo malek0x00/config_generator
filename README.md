@@ -43,11 +43,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 You can find the dockerfile to build  the Docker image that will be used to create the container.
 
-Run this command inside the App repo [docker build -t configgenerator:v1 .]
+Run this command inside the App repo "docker build -t configgenerator:v1 ."
 
 ## Run the container
 
-Run this command [docker run -p 3000:3000 filegen:v1]
+Run this command "docker run -p 3000:3000 filegen:v1"
 
 ## Acces the app 
 
