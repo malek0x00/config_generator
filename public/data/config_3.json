@@ -1,0 +1,14 @@
+{
+    "name":"test",
+    "input":[
+        {"name":"inp1","type":"text"},
+        {"name":"box1","type":"selection","values":[
+            {"name":"apt","real_value":"apt install xxx\n apt autoremove"},
+            {"name":"snap","real_value":"snap install xxx\n snap remove xxx"}
+            ]
+        },
+        {"name":"inp2","type":"text"},
+        {"name":"inp3","type":"text"}
+    ],
+    "config_path":"another.sh"
+}

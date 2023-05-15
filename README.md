@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Description
+this project helps with generating config files like dockerfiles and bash scripts
+
+## Screenshots
+ <img src="./scr1.png" width="100%" />
+ <img src="./scr2.png" width="100%" />
+
 ## Getting Started
 
 First, run the development server:
